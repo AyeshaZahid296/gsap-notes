@@ -1,0 +1,2 @@
+gsap.to() , gsap.from() and gsap.fromTo() these manage only one element .
+gsap.timeline() is a powerfull sequencing tool use to manage multiple animations.
