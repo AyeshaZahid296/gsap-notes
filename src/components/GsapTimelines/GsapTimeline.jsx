@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 const GsapTimeline = () => {
+    const timelineRef = useRef(null);
+
     useEffect(() => {
-        const timeline = gsap.timeline({
+        timelineRef.current = gsap.timeline({
             repeat: 1,
             repeatDelay: 1,
             yoyo: true,
+            paused: true, // important
         });
 
-        timeline.to('#yellowbox', {
+        timelineRef.current.to('#yellowbox', {
             x: 300,
             rotation: 360,
             borderRadius: '100%',
@@ -17,7 +20,7 @@ const GsapTimeline = () => {
             ease: 'power1.inOut',
         });
 
-        timeline.to('#yellowbox', {
+        timelineRef.current.to('#yellowbox', {
             y: 300,
             scale: 1,
             rotation: 360,
@@ -26,7 +29,7 @@ const GsapTimeline = () => {
             ease: 'bounce.inOut',
         });
 
-        timeline.to('#yellowbox', {
+        timelineRef.current.to('#yellowbox', {
             x: 600,
             scale: 0.5,
             rotation: 0,
@@ -36,11 +39,28 @@ const GsapTimeline = () => {
         });
     }, []);
 
+    const handlePlayPause = () => {
+        if (timelineRef.current.paused()) {
+            timelineRef.current.play();
+        } else {
+            timelineRef.current.pause();
+        }
+    };
+
     return (
-        <div
-            id="yellowbox"
-            className="bg-yellow-500 rounded-lg w-32 h-32 flex items-center justify-center"
-        ></div>
+        <>
+            <div
+                id="yellowbox"
+                className="bg-yellow-500 rounded-lg w-32 h-32"
+            ></div>
+
+            <button
+                onClick={handlePlayPause}
+                className="mt-4 p-2 bg-red-200 text-black rounded cursor-pointer w-24"
+            >
+                Play/Pause
+            </button>
+        </>
     );
 };
 
