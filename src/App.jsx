@@ -5,6 +5,7 @@ import GsapFromTo from './components/GsapAnimations/GsapFromTo'
 import GsapTimeline from './components/GsapTimelines/GsapTimeline'
 import GsapStagger from './components/GsapStagger/GsapStagger'
 import GsapScrollTrigger from './components/GsapScrollTrigger/GsapScrollTrigger'
+import GsapText from './components/GsapTextPlugin/GsapText'
 
 const App = () => {
   return (
@@ -20,6 +21,8 @@ const App = () => {
       <GsapStagger />
       <br />
       <GsapScrollTrigger />
+      <br />
+      <GsapText />
     </>
   )
 }
