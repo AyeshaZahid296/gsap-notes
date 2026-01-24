@@ -4,6 +4,7 @@ import GsapTo from './components/GsapAnimations/GsapTo'
 import GsapFromTo from './components/GsapAnimations/GsapFromTo'
 import GsapTimeline from './components/GsapTimelines/GsapTimeline'
 import GsapStagger from './components/GsapStagger/GsapStagger'
+import GsapScrollTrigger from './components/GsapScrollTrigger/GsapScrollTrigger'
 
 const App = () => {
   return (
@@ -17,6 +18,8 @@ const App = () => {
       <GsapTimeline />
       <br />
       <GsapStagger />
+      <br />
+      <GsapScrollTrigger />
     </>
   )
 }

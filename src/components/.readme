@@ -1,2 +1,3 @@
-gsap.to() , gsap.from() and gsap.fromTo() these manage only one element .
+gsap.to(), gsap.from() and gsap.fromTo() these manage only one element.
 gsap.timeline() is a powerfull sequencing tool use to manage multiple animations.
+gsapscrollTrigger is a plugin(means we have to import it on the top) and after import we have to write gsap.registerplugin(ScrollTrigger), and we also have to define  referance(means ref) eg: const scrollRef = useRef(), and then we have to attacch the boxes with Ref.
